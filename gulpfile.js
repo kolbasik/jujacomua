@@ -32,9 +32,11 @@ gulp.task('copyfonts', function() {
 });
 
 gulp.task('imagemin', function() {
+    var pngquant = require('imagemin-pngquant');
     return gulp.src(path.src + '**/*.{png,jpg,jpeg}', { base: path.src })
         .pipe(plugins.imagemin({
-            progressive: true
+            progressive: false,
+            use: [ pngquant() ]
         }))
         .pipe(gulp.dest(path.dst));
 });
