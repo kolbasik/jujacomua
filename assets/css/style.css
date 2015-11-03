@@ -1,0 +1,68 @@
+
+body{
+	margin: 0;
+    padding: 0;
+	background: #f8f8f8;
+	font-family: arial;
+	font-size: 16px;
+	text-align: justify;
+}
+footer{
+	background: url("../images/footer.jpg") center top no-repeat;
+	background-size: cover;
+	min-height: 280px;
+}
+.section-header {
+	background: url("../images/header.jpg") center top no-repeat;
+	background-size: cover;
+    min-height: 725px;
+}
+.text-color-white{
+	color: #f8f8f8;
+}
+.text-color-yellow{
+	font-size: 17pt;
+	color: #fff200;
+	margin-top: 50px
+}
+.top-text-left{
+	padding-top: 115px;
+	text-align: center;
+}
+.form-registration{
+	padding-top: 233px;
+}
+.padding{
+	padding: 50px 0;
+}
+.registration{
+	display: inline-block;
+	margin-top: 75px;
+	border-radius: 30px;
+	background: #fff200;
+	font-size: 14pt;
+	text-decoration: none;
+	color: black;
+	padding: 10px;
+}
+.grey-block{
+	background: url("../images/grey.jpg") center top no-repeat;
+	background-size: cover;
+}
+.small-logo-img{
+	max-width: 40px;
+	max-height: 40px;
+}
+.padding-top{
+	padding-top: 50px;
+}
+.left-align{
+	text-align: left;
+}
+.present{
+	background: url("../images/present.jpg") center top no-repeat;
+	background-size: cover;
+}
+.feedback{
+	font-style: italic;
+}
