@@ -8,12 +8,12 @@ body{
 	text-align: justify;
 }
 footer{
-	background: url("../images/footer.jpg") center top no-repeat;
+	background: url("../assets/images/footer.jpg") center top no-repeat;
 	background-size: cover;
 	min-height: 280px;
 }
 .section-header {
-	background: url("../images/header.jpg") center top no-repeat;
+	background: url("../assets/images/header.jpg") center top no-repeat;
 	background-size: cover;
     min-height: 725px;
 }
@@ -46,7 +46,7 @@ footer{
 	padding: 10px;
 }
 .grey-block{
-	background: url("../images/grey.jpg") center top no-repeat;
+	background: url("../assets/images/grey.jpg") center top no-repeat;
 	background-size: cover;
 }
 .small-logo-img{
@@ -60,7 +60,7 @@ footer{
 	text-align: left;
 }
 .present{
-	background: url("../images/present.jpg") center top no-repeat;
+	background: url("../assets/images/present.jpg") center top no-repeat;
 	background-size: cover;
 }
 .feedback{
