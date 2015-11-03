@@ -14,16 +14,20 @@ gulp.task('clean', function() {
 
 gulp.task('usemin', function() {
     return gulp.src(path.src + '**/*.html', { base: path.src })
-        .pipe(plugins.usemin({
-            assetsDir: path.src,
-            outputRelativePath: path.dst,
-            html: [ plugins.minifyHtml({ empty: true }) ],
-            css:  [ plugins.minifyCss(), 'concat', plugins.rev() ],
-            js:   [ plugins.uglify(), plugins.rev() ],
-            inlinejs: [ plugins.uglify() ],
-            inlinecss: [ plugins.minifyCss(), 'concat' ]
-        }))
-        .pipe(gulp.dest(path.dst));
+        .pipe(track_error())
+        .pipe(plugins.foreach(function (stream) {
+            return stream
+                .pipe(plugins.usemin({
+                    assetsDir: path.src,
+                    outputRelativePath: path.dst,
+                    html: [ plugins.minifyHtml({ empty: true }) ],
+                    css:  [ plugins.minifyCss(), 'concat', plugins.rev() ],
+                    js:   [ plugins.uglify(), plugins.rev() ],
+                    inlinejs:  [ plugins.uglify() ],
+                    inlinecss: [ plugins.minifyCss(), 'concat' ]
+                }))
+                .pipe(gulp.dest(path.dst));
+        }));
 });
 
 gulp.task('copyfonts', function() {
@@ -33,7 +37,7 @@ gulp.task('copyfonts', function() {
 
 gulp.task('imagemin', function() {
     var pngquant = require('imagemin-pngquant');
-    return gulp.src(path.src + '**/*.{png,jpg,jpeg}', { base: path.src })
+    return gulp.src(path.src + '**/*.{png,jpg}', { base: path.src })
         .pipe(plugins.imagemin({
             progressive: false,
             use: [ pngquant() ]
@@ -43,3 +47,22 @@ gulp.task('imagemin', function() {
 
 gulp.task('build', ['usemin', 'copyfonts', 'imagemin']);
 gulp.task('default', ['build']);
+
+function track_error() {
+    return plugins.plumber({
+        errorHandler: trace_error("plumber")
+    });
+}
+
+function trace_error (title) {
+    return function write_error(error) {
+        var trace = plugins.notify.onError({
+            title:    "Gulp:" + title,
+            message:  "Error: <%= error.message %>",
+            sound:    "Beep"
+        });
+        trace(error);
+        console.log(error.toString());
+        this.emit && this.emit("end");
+    };
+}
