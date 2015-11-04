@@ -13,8 +13,12 @@ gulp.task('clean', function() {
 });
 
 gulp.task('usemin', function() {
-    return gulp.src(path.src + '**/*.html', { base: path.src })
+    return gulp.src(path.src + '**/index.jade', { base: path.src })
         .pipe(track_error())
+        .pipe(plugins.jade({
+            pretty: true
+        }))
+        .pipe(gulp.dest(path.tmp))
         .pipe(plugins.foreach(function (stream) {
             return stream
                 .pipe(plugins.usemin({
