@@ -6,6 +6,7 @@
 $ git clone https://github.com/kolbasik/jujacomua.git
 $ cd jujacomua
 $ npm install
+$ npm run build
 ```
 
 # roadmap
