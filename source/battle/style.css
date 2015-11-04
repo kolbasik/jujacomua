@@ -1,68 +1,85 @@
-
-body{
+.b-page {
 	margin: 0;
     padding: 0;
 	background: #f8f8f8;
-	font-family: arial;
-	font-size: 16px;
 	text-align: justify;
 }
-footer{
-	background: url("../assets/images/footer.jpg") center top no-repeat;
-	background-size: cover;
-	min-height: 280px;
-}
-.section-header {
-	background: url("../assets/images/header.jpg") center top no-repeat;
-	background-size: cover;
-    min-height: 725px;
-}
-.text-color-white{
+
+.b-header {
 	color: #f8f8f8;
 }
-.text-color-yellow{
-	font-size: 17pt;
+
+.b-logo {
+}
+.b-logo--small {
+	width: 40px;
+	height: 40px;
+}
+
+.b-link {
+	display: inline-block;
+	font-size: 14pt;
 	color: #fff200;
-	margin-top: 50px
 }
-.top-text-left{
-	padding-top: 115px;
-	text-align: center;
+
+.b-link__registration {
+	height: 47px; line-height: 47px;
+	margin: 75px 0 0; padding: 0 48px;
+	background: none 0% 50% repeat rgb(255, 242, 0);
+	color: rgb(18, 16, 18);
+	font-family: arial;
+	font-size: 15px;
+	font-weight: bold;
+	text-decoration: none;
+	border-radius: 30px;
+	border: 0px solid rgb(224, 224, 16);
+	letter-spacing: .1rem;
 }
-.form-registration{
-	padding-top: 233px;
+
+.b-page__header {
+	background: url("../assets/images/header.jpg") center top no-repeat;
+	background-size: cover;
+	min-height: 725px;
 }
-.padding{
+
+.b-page__section {
 	padding: 50px 0;
 }
-.registration{
-	display: inline-block;
-	margin-top: 75px;
-	border-radius: 30px;
-	background: #fff200;
-	font-size: 14pt;
-	text-decoration: none;
-	color: black;
-	padding: 10px;
-}
-.grey-block{
+
+.b-page__section--grey{
 	background: url("../assets/images/grey.jpg") center top no-repeat;
 	background-size: cover;
 }
-.small-logo-img{
-	max-width: 40px;
-	max-height: 40px;
+
+.b-page__footer {
+	background: url("../assets/images/footer.jpg") center top no-repeat;
+	background-size: cover;
+	min-height: 280px;
+	padding: 50px 0;
 }
-.padding-top{
-	padding-top: 50px;
+
+.u-battle-information {
+	padding-top: 115px;
+	text-align: center;
 }
-.left-align{
-	text-align: left;
+.u-battle-information__gifts-link {
+	font-size: 17pt;
 }
-.present{
+
+.u-battle-registration {
+	padding-top: 233px;
+}
+
+.u-battle-feedbacks {
+}
+.u-battle-feedbacks__item {
+	font-style: italic;
+}
+
+.u-battle-gifts {
 	background: url("../assets/images/present.jpg") center top no-repeat;
 	background-size: cover;
 }
-.feedback{
-	font-style: italic;
+.u-battle-gifts__description {
+	text-align: left;
 }

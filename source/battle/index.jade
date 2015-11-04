@@ -1,7 +1,6 @@
 extends ../_layout
 
 block styles
-  link(rel="stylesheet", type="text/css", href="//fonts.googleapis.com/css?family=Raleway:400,300,600")
   <!-- build:css ../assets/css/battle.css -->
   link(rel="stylesheet", href="../../bower_components/skeleton/css/normalize.css")
   link(rel="stylesheet", href="../../bower_components/skeleton/css/skeleton.css")
@@ -12,59 +11,59 @@ block styles
 
 block body
   <!-- Информации о дате и теме вебинара -->
-  section.section-header
+  section.b-page__header
     div.container
       div.row
-        div.one-half.column.top-text-left
+        div.one-half.column.u-battle-information
           a(name="top")
-          img(src="../assets/images/logo.png")
-          h2.text-color-white ОСЕННИЙ CODENJOY JAVA БАТЛ
-          h4.text-color-white ПОКАЖИ НА ЧТО ТЫ СПОСОБЕН!
-          h5: a.text-color-yellow(href="#present-link") ЗАБЕРИ СВОЙ ПРИЗ!
-          h5.text-color-white ДАТА ВЕБИНАРА 03 НОЯБРЯ 2015 В 19.00 (ПО КИЕВУ)
+          img.b-logo(src="../assets/images/logo.png")
+          h2.b-header ОСЕННИЙ CODENJOY JAVA БАТЛ
+          h4.b-header ПОКАЖИ НА ЧТО ТЫ СПОСОБЕН!
+          h5.b-header: a.b-link.u-battle-information__gifts-link(href="#present-link") ЗАБЕРИ СВОЙ ПРИЗ!
+          h5.b-header ДАТА ВЕБИНАРА 10 НОЯБРЯ 2015 В 19.00 (ПО КИЕВУ)
 
-        div.one-half.column.form-registration
+        div.one-half.column.u-battle-registration
           include _smartresponder.html
 
   <!-- Секция информации о codenjoy -->
-  section
-    div.container
-      div.row.padding
-        div.twelve.columns
-          center: h5.black-text ЧТО ТАКОЕ CODENJOY
-          p Это веселый тренажер для программистов. Там ты играешь в игру но не джойстиком, а с помощью своего бота, которого по ходу пишешь.  Есть много разных игр: Змейка, Тетрис, Танчики. Бомбермен, 2048, Судоку, Кубик рубика, Хекс и так далее…
-          center: img(src="../assets/images/bomberman.jpg")
-
-  <!-- Секция информации о вебинаре-->
-  section.grey-block.padding
+  section.b-page__section
     div.container
       div.row
         div.twelve.columns
-          center: h5.black-text
-          p Присоединяйся к бесплатному онлайн вебинару, который состоится <strong>3 ноября в 19.00 (по Киеву)</strong>. На вебинаре мы подробно расскажем, что необходимо будет делать, правила игры и участия. Мы ответим на все вопросы, которые у тебя возникнут. Участие в соревновании БЕСПЛАТНОЕ.
+          center: h5 ЧТО ТАКОЕ CODENJOY
+          p Это веселый тренажер для программистов. Там ты играешь в игру но не джойстиком, а с помощью своего бота, которого по ходу пишешь. Есть много разных игр: Змейка, Тетрис, Танчики. Бомбермен, 2048, Судоку, Кубик рубика, Хекс и так далее…
+          center: img(src="../assets/images/bomberman.jpg")
+
+  <!-- Секция информации о вебинаре-->
+  section.b-page__section.b-page__section--grey
+    div.container
+      div.row
+        div.twelve.columns
+          center: h5
+          p Присоединяйся к бесплатному онлайн вебинару, который состоится <strong>10 ноября в 19.00 (по Киеву)</strong>. На вебинаре мы подробно расскажем, что необходимо будет делать, правила игры и участия. Мы ответим на все вопросы, которые у тебя возникнут. Участие в соревновании БЕСПЛАТНОЕ.
 
   <!-- Секция информации для кого устраиваем-->
-  section
+  section.b-page__section
     div.container
-      div.row.padding
+      div.row
         div.twelve.columns
-          center: h5.black-text ДЛЯ КОГО МЫ УСТРАИВАЕМ СОРЕВНОВАНИЯ
+          center: h5 ДЛЯ КОГО МЫ УСТРАИВАЕМ СОРЕВНОВАНИЯ
           p Если ты начинающий разработчик и тебе немного поднадоело чтение книг на тему Java, утомили унылые задачки и ты хочешь получить удовольствие от того, что ты уже изучил в Java -  приходи к нам! Мы устраиваем веселый турнир, победители которого получат полезные призы от образовательной площадки JuJa.
           p Тебе не обязательно знать про ООП, тут достаточно процедурного стиля: методы, циклы, переменные, ифы, елзы… Тебе просто надо придумать стратегию игры, а потом ее реализовать. Вот например <a href=" http://codenjoy.com/codenjoy-contest/resources/help/snake.html" target="_blank">игра в змейку</a> (одна из простых) подобным образом устроены и другие игрушки. Прямо сейчас ты можешь взять и написать своего бота. Так ты разберешься в codenjoy.
 
   <!-- Секция отсчета времени до начала соревнований -->
-  section.grey-block.padding
+  section.b-page__section.b-page__section--grey
     div.container
       div.row
         div.twelve.column
-          center: h5.black-text ДО НАЧАЛА ВЕБИНАРА ОСТАЛОСЬ
-          script(type="text/javascript", src="//timegenerator.ru/s/809208506a8b8ef8e4701fa284dccf5e.js")
-          center: a.registration(href="#top") ЗАРЕГИСТРИРОВАТЬСЯ
+          center: h5 ДО НАЧАЛА ВЕБИНАРА ОСТАЛОСЬ
+          script(type="text/javascript", src="//timegenerator.ru/s/b7e1ca829bda98a59cd555cfc3b729de.js")
+          center: a.b-link.b-link__registration(href="#top") ЗАРЕГИСТРИРОВАТЬСЯ
 
   <!-- Секция информации об авторах и организаторах -->
-  section
+  section.b-page__section
     div.container
-      div.row.padding
+      div.row
         div.twelve.columns
           center: h5 ВЕДУЩИЕ И ОРГАНИЗАТОРЫ СОРЕВНОВАНИЙ
 
@@ -86,63 +85,63 @@ block body
             | Веду свой блог <a href="http://kuchyn.com.ua/" target="_blank">kuchyn.com.ua</a>, где иногда пишу про путешествия, фриланс и про жизнь вобщем. Автор курса разработки web продукта на Java для новичков. Занимаюсь персональными консультациями новичков Java, основной целью которых есть трудоустройство. Все, с кем я работал, уже пишут коммерческий Java код в IT компаниях.
 
   <!-- Секция как все будет проходить -->
-  section.grey-block.padding
+  section.b-page__section.b-page__section--grey
     div.container
-      div.row.padding
+      div.row
         div.twelve.columns
-          center: h5.black-text КАК ВСЕ БУДЕТ ПРОИСХОДИТЬ
+          center: h5 КАК ВСЕ БУДЕТ ПРОИСХОДИТЬ
           p Уже сейчас можно поиграть в любую игрушку <a href="http://codenjoy.com/codenjoy-contest" target="_blank">вот тут</a> для того, чтобы разобраться с тренажером
             br
-            | <strong>3 ноября (вторник) в 19.00 (по Киеву)</strong> - вебинар на тему баттла. Мы разбиремся в том, что такое веселый тренажер codenjoy, как играть в игры, анонсируем игрушку и у тебя будет чуть больше недели для того, чтобы написать своего классного бота!
+            | <strong>3 ноября (вторник) в 19.00 (по Киеву)</strong> - уже состоялся вебинар на тему батла. Мы разобрались в том, что такое веселый тренажер codenjoy, как играть в игры, анонсировали игрушку и у тебя будет чуть больше недели для того, чтобы написать своего классного бота! При регистрации на соревнование, тебе на почту прийдет письмо с записью этого вебинара.
             br
             | <strong>10 ноября (вторник) в 19.00 (по Киеву)</strong> - повторная встреча, на которой мы ответим на все вопросы, которые у тебя возникли по ходу создания своего бота.
             br
             | <strong>12 ноября (четверг) в 19.00 (по Киеву)</strong> - начало сбора; в 19:30 - старт соревнования; а в 20:30-21:00 - окончание, объявление победителя.
 
   <!-- Секция отзывы о предыдущих соревнованиях-->
-  section.padding
+  section.b-page__section.u-battle-feedbacks
     div.container
       div.row
         div.twelve.columns
-          center: h5.black-text ОТЗЫВЫ О ПРЕДЫДУЩИХ СОРЕВНОВАНИЯХ
+          center: h5 ОТЗЫВЫ О ПРЕДЫДУЩИХ СОРЕВНОВАНИЯХ
 
       div.row
-        div.one-third.column
+        div.one-third.column.u-battle-feedbacks__item
           center: img(src="../assets/images/proffesional.png")
-          p.feedback "Я первый раз пошел на tetris codenjoy. Соревнование превзошло мои ожидания. Оно проходило в интенсивных и самое главное в интересных условиях. Получил море удовольствия. Жаль, что всё так быстро закончилось=) На множество идей попросту не хватило времени."
+          p "Я первый раз пошел на tetris codenjoy. Соревнование превзошло мои ожидания. Оно проходило в интенсивных и самое главное в интересных условиях. Получил море удовольствия. Жаль, что всё так быстро закончилось=) На множество идей попросту не хватило времени."
 
-        div.one-third.column
+        div.one-third.column.u-battle-feedbacks__item
           center: img(src="../assets/images/proffesional.png")
-          p.feedback "Понравился сам игровой подход. Задачка нестандартная и фановая. На первый взгляд простая, но когда начинают падать фигуры, понимаешь, что надо быстро-быстро шевелить мозгами)). Очень весело и интересно, не смотря на глубокие минуса в счете))."
+          p "Понравился сам игровой подход. Задачка нестандартная и фановая. На первый взгляд простая, но когда начинают падать фигуры, понимаешь, что надо быстро-быстро шевелить мозгами)). Очень весело и интересно, не смотря на глубокие минуса в счете))."
 
-        div.one-third.column
+        div.one-third.column.u-battle-feedbacks__item
           center: img(src="../assets/images/proffesional.png")
-          p.feedback "Было очень круто. Очень понравилась азартная атмосфера. Такие мероприятия как-никак, но помогают вливаться в командную работу, что для новичков очень полезно"
+          p "Было очень круто. Очень понравилась азартная атмосфера. Такие мероприятия как-никак, но помогают вливаться в командную работу, что для новичков очень полезно"
 
       div.row
-        div.one-third.column
+        div.one-third.column.u-battle-feedbacks__item
           center: img(src="../assets/images/proffesional.png")
-          p.feedback "Сподобалося з точки зору спортивного програмування. Гра викликала неабиякий азарт, сподобався формат проведення. Найцікавішим вважаю те, що потрібно знайти баланс між швидкістю і »інтелектом» алгоритму."
+          p "Сподобалося з точки зору спортивного програмування. Гра викликала неабиякий азарт, сподобався формат проведення. Найцікавішим вважаю те, що потрібно знайти баланс між швидкістю і »інтелектом» алгоритму."
 
-        div.one-third.column
+        div.one-third.column.u-battle-feedbacks__item
           center: img(src="../assets/images/proffesional.png")
-          p.feedback "Понравилась идея подачи процесса программирования в виде игры, а также режим realtime-соревнования. Последнее «подстегивает» участников действовать быстрее — не отставать. Интересным он покажется только тем, кого действительно захватывает программирование."
+          p "Понравилась идея подачи процесса программирования в виде игры, а также режим realtime-соревнования. Последнее «подстегивает» участников действовать быстрее — не отставать. Интересным он покажется только тем, кого действительно захватывает программирование."
 
-        div.one-third.column
+        div.one-third.column.u-battle-feedbacks__item
           center: img(src="../assets/images/proffesional.png")
-          p.feedback Отличный ивент. Дружелюбная атмосфера, интересная задача, организация на высоте. Дух соревнования заставляет мобилизировать все способности. Обмен придуманными алгоритмами позволяет взглянуть на поставленную задачу под разными углами."
+          p Отличный ивент. Дружелюбная атмосфера, интересная задача, организация на высоте. Дух соревнования заставляет мобилизировать все способности. Обмен придуманными алгоритмами позволяет взглянуть на поставленную задачу под разными углами."
 
   <!-- Секция подарок соревнования codenjoy -->
-  section.present.padding
+  section.b-page__section.u-battle-gifts
     div.container
-      a(name="present-link")
+      a(name="gifts-link")
       div.row
         div.twelve.columns
-          center: h5.black-text ПОДАРОКИ ДЛЯ УЧАСТНИКОВ
+          center: h5 ПОДАРОКИ ДЛЯ УЧАСТНИКОВ
 
       div.row
-        div.one-half.column
-          p.left-align
+        div.one-half.column.u-battle-gifts__description
+          p
             | Мы решили организовать событие для фана, драйва и для того, чтобы показать, насколько много на самом деле
             | ты знаешь, а также доказать, что програмировать можно еще и весело.
             | Поэтому у тебя есть возможность получить один из подарков:
@@ -151,18 +150,16 @@ block body
             br
             | - <strong>бесплатная подписка</strong> на <a href="http://juja.com.ua/design-patterns/" target="_blank">"Шаблоны проектирования"</a>
             br
-            | - <strong>обучающая лицензия</strong> - от jetbrains на intellij idea ultimate (сроком на 3 месяца)
+            | - <strong>обучающая лицензия</strong> - от JetBrains на IntelliJ IDEA Ultimate (сроком на 3 месяца)
 
     div.row
       div.twelve.columns
-        center: a.registration(href="#top") ЗАРЕГИСТРИРОВАТЬСЯ
+        center: a.b-link.b-link__registration(href="#top") ЗАРЕГИСТРИРОВАТЬСЯ
 
-  footer
+  footer.b-page__footer
     center
-      h5.text-color-white.padding-top ЕСТЬ ЕЩЕ ВОПРОСЫ? ОБРАЩАЙСЯ!
-      h5.text-color-white info@juja.com.ua
-      img.small-logo-img(src="../assets/images/logo.png")
+      h5.b-header ЕСТЬ ЕЩЕ ВОПРОСЫ? ОБРАЩАЙСЯ!<br>info@juja.com.ua
+      img.b-logo.b-logo--small(src="../assets/images/logo.png")
 
 block scripts
-  script.
-    console.log('done')
+  // include ./_analytics.html

@@ -49,7 +49,7 @@ gulp.task('imagemin', function() {
         .pipe(gulp.dest(path.dst));
 });
 
-gulp.task('build', ['usemin', 'copyfonts', 'imagemin']);
+gulp.task('build', ['usemin'/*, 'copyfonts'*/, 'imagemin']);
 gulp.task('default', ['build']);
 
 function track_error() {
