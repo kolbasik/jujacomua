@@ -9,3 +9,4 @@
 + imagemin to optimize image sizes
 + usemin to optimize html, css and js scripts
 + jade to prepare html files
++ use bower for skeleton

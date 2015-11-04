@@ -1,0 +1,16 @@
+{
+  "name": "juja.com.ua",
+  "description": "",
+  "main": "server.js",
+  "authors": [ "kolbasik" ],
+  "license": "ISC",
+  "homepage": "https://github.com/kolbasik/jujacomua",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
