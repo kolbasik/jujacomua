@@ -1,5 +1,8 @@
 extends ../_layout
 
+block title
+  title Juja codenjoy java battle
+
 block styles
   <!-- build:css ../assets/css/battle.css -->
   link(rel="stylesheet", href="../../bower_components/skeleton/css/normalize.css")
@@ -19,7 +22,7 @@ block body
           img.b-logo(src="../assets/images/logo.png")
           h2.b-header ОСЕННИЙ CODENJOY JAVA БАТЛ
           h4.b-header ПОКАЖИ НА ЧТО ТЫ СПОСОБЕН!
-          h5.b-header: a.b-link.u-battle-information__gifts-link(href="#present-link") ЗАБЕРИ СВОЙ ПРИЗ!
+          h5.b-header: a.b-link.u-battle-information__gifts-link(href="#gifts-link") ЗАБЕРИ СВОЙ ПРИЗ!
           h5.b-header ДАТА ВЕБИНАРА 10 НОЯБРЯ 2015 В 19.00 (ПО КИЕВУ)
 
         div.one-half.column.u-battle-registration

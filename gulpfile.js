@@ -41,7 +41,7 @@ gulp.task('copyfonts', function() {
 
 gulp.task('imagemin', function() {
     var pngquant = require('imagemin-pngquant');
-    return gulp.src(path.src + '**/*.{png,jpg}', { base: path.src })
+    return gulp.src(path.src + '**/*.{png,jpg,ico}', { base: path.src })
         .pipe(plugins.imagemin({
             progressive: false,
             use: [ pngquant() ]

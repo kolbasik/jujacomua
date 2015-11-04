@@ -37,7 +37,7 @@
 }
 
 .b-page__header {
-	background: url("../assets/images/header.jpg") center top no-repeat;
+	background: #26370A url("../assets/images/header.jpg") center top no-repeat;
 	background-size: cover;
 	min-height: 725px;
 }
