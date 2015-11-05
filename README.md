@@ -25,3 +25,9 @@ $ npm run build
 + jade to prepare html files
 + use bower for skeleton
 + use BEM for HTML markup: https://ru.bem.info/method/naming-convention/
+
+# usefull links
++ HTML5 form validation
+  http://www.html5rocks.com/en/tutorials/forms/constraintvalidation/
++ YOU MIGHT NOT NEED JQUERY
+  http://youmightnotneedjquery.com/
