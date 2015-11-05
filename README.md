@@ -9,6 +9,10 @@ $ npm install
 $ npm run build
 ```
 
+# test
+
++ https://developers.google.com/speed/pagespeed/insights
+
 # roadmap
 - added gulp-uncss to remove unused css from styles to reduce file size
 - optimize smartresponder.ru snipets to prevent blocking rendering
