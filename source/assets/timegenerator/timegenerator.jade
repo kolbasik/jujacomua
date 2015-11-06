@@ -1,0 +1,82 @@
+style(type="text/css")
+	:clean-css
+		@font-face {
+			font-family: 'Myriad Pro';
+			src: url('http://timegenerator.ru/c/2/myriadpro-regular-webfont.eot?') format('eot'),
+			url('http://timegenerator.ru/c/2/myriadpro-regular-webfont.woff') format('woff'),
+			url('http://timegenerator.ru/c/2/myriadpro-regular-webfont.ttf') format('truetype'),
+			url('http://timegenerator.ru/c/2/myriadpro-regular-webfont.svg#webfontZPnuZIZf') format('svg');
+			font-weight: normal;
+			font-style: normal;
+		}
+		#countbox { overflow: hidden; text-align: center; padding: 0; margin:0 auto; line-height: 1.2; color: #2f2f2f; font-family: 'Myriad Pro',Helvetica,sans-serif; font-size: 115px }
+		#countbox .countbox-num { display: inline-block; width: 174px; height: 170px; }
+		#countbox .countbox-space { display: inline-block; width: 10px; height: 170px; }
+		#countbox-days1,#countbox-hours1,#countbox-mins1,#countbox-secs1{float: left;text-align: center;background-image:url('http://timegenerator.ru/c/2/flip.png');background-repeat:no-repeat;margin: 0 -3px 0 0;height: 145px;width: 90px;z-index:1;}
+		#countbox-days2,#countbox-hours2,#countbox-mins2,#countbox-secs2{float: left;text-align: center;background-image:url('http://timegenerator.ru/c/2/flip.png');background-repeat:no-repeat;margin: 0 0 0 -3px;height: 145px;width: 90px;z-index:1;}
+		#countbox-days-text,#countbox-hours-text,#countbox-mins-text,#countbox-secs-text{background-position: center;background-repeat:no-repeat;position: absolute;margin-top: 150px;height: 14px;width: 174px;}
+		#countbox-days-text{background-image:url('http://timegenerator.ru/c/2/days_text.gif');}
+		#countbox-hours-text{background-image:url('http://timegenerator.ru/c/2/hours_text.gif');}
+		#countbox-mins-text{background-image:url('http://timegenerator.ru/c/2/mins_text.gif');}
+		#countbox-secs-text{background-image:url('http://timegenerator.ru/c/2/secs_text.gif');}
+		#countbox-days1 span, #countbox-days2 span, #countbox-hours1 span, #countbox-hours2 span, #countbox-mins1 span, #countbox-mins2 span, #countbox-secs1 span, #countbox-secs2 span {background: url('http://timegenerator.ru/c/2/flip_gradient.png');background-repeat:no-repeat;position: absolute;display: block;height: 145px;width: 90px; }
+
+script(type="text/javascript")
+	:uglify-js
+		var TG = (function () {
+			return {
+				countdown: countdown
+			};
+
+			function countdown (wrapper, year, month, day, hour, minute, sec) {
+				var dateFuture = new Date(year, --month, day, hour || 0, minute || 0, sec || 0);
+				return render();
+
+				function render () {
+					var dateNow = new Date,
+						amount = dateFuture.getTime() - dateNow.getTime() + 5;
+
+					var days = '0', days1 = '0', days2 = '0',
+						hours = '0', hours1 = '0', hours2 = '0',
+						mins = '0', mins1 = '0', mins2 = '0',
+						secs = '0', secs1 = '0', secs2 = '0';
+
+					if (amount > 0) {
+						amount = Math.floor(amount / 1e3);
+						days = Math.floor(amount / 86400).toString();
+						days1 = (days.length > 1) ? days.charAt(0) : '0';
+						days2 = (days.length > 1) ? days.charAt(1) : days.charAt(0);
+						amount = amount % 86400;
+						hours = Math.floor(amount / 3600).toString();
+						hours1 = (hours.length > 1) ? hours.charAt(0) : '0';
+						hours2 = (hours.length > 1) ? hours.charAt(1) : hours.charAt(0);
+						amount = amount % 3600;
+						mins = Math.floor(amount / 60).toString();
+						mins1 = (mins.length > 1) ? mins.charAt(0) : '0';
+						mins2 = (mins.length > 1) ? mins.charAt(1) : mins.charAt(0);
+						amount = amount % 60;
+						secs = Math.floor(amount).toString();
+						secs1 = (secs.length > 1) ? secs.charAt(0) : '0';
+						secs2 = (secs.length > 1) ? secs.charAt(1) : secs.charAt(0);
+						setTimeout(render, 1e3)
+					}
+
+					var html = [
+						"<div class='countbox-num'><div id='countbox-days1'><span></span>" + days1 + "</div><div id='countbox-days2'><span></span>" + days2 + "</div><div id='countbox-days-text'></div></div>",
+						"<div class='countbox-space'></div>",
+						"<div class='countbox-num'><div id='countbox-hours1'><span></span>" + hours1 + "</div><div id='countbox-hours2'><span></span>" + hours2 + "</div><div id='countbox-hours-text'></div></div>",
+						"<div class='countbox-space'></div>",
+						"<div class='countbox-num'><div id='countbox-mins1'><span></span>" + mins1 + "</div><div id='countbox-mins2'><span></span>" + mins2 + "</div><div id='countbox-mins-text'></div></div>",
+						"<div class='countbox-space'></div>",
+						"<div class='countbox-num'><div id='countbox-secs1'><span></span>" + secs1 + "</div><div id='countbox-secs2'><span></span>" + secs2 + "</div><div id='countbox-secs-text'></div></div>"
+					].join('');
+					wrapper.innerHTML = html;
+				}
+			}
+		})();
+
+		document.addEventListener('DOMContentLoaded', function () {
+			TG.countdown(document.getElementById("countbox"), 2015, 11, 10, 19);
+		});
+
+div#countbox

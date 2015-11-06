@@ -4,11 +4,13 @@ block title
   title Juja codenjoy java battle
 
 block styles
-  <!-- build:css ../assets/css/battle.css -->
+  //- <!-- build:css ../assets/css/battle.css -->
+  //- link(rel="stylesheet", href="../../bower_components/skeleton/css/normalize.css")
+  //- link(rel="stylesheet", href="../../bower_components/skeleton/css/skeleton.css")
+  //- <!-- endbuild -->
+  <!-- build:inlinecss-->
   link(rel="stylesheet", href="../../bower_components/skeleton/css/normalize.css")
   link(rel="stylesheet", href="../../bower_components/skeleton/css/skeleton.css")
-  <!-- endbuild -->
-  <!-- build:inlinecss -->
   link(rel="stylesheet", href="style.css")
   <!-- endbuild -->
 
@@ -26,9 +28,7 @@ block body
           h5.b-header ДАТА ВЕБИНАРА 10 НОЯБРЯ 2015 В 19.00 (ПО КИЕВУ)
 
         div.one-half.column.u-battle-registration
-          style(type="text/css")
-            include ../assets/smartresponder/smartresponder.css
-          include ../assets/smartresponder/smartresponder.html
+          include ../assets/smartresponder/smartresponder.jade
 
   <!-- Секция информации о codenjoy -->
   section.b-page__section
@@ -62,7 +62,7 @@ block body
       div.row
         div.twelve.column
           center: h5 ДО НАЧАЛА ВЕБИНАРА ОСТАЛОСЬ
-          include ../assets/timegenerator/timegenerator.html
+          include ../assets/timegenerator/timegenerator.jade
           center: a.b-link.b-link__registration(href="#top") ЗАРЕГИСТРИРОВАТЬСЯ
 
   <!-- Секция информации об авторах и организаторах -->
@@ -167,4 +167,4 @@ block body
       img.b-logo.b-logo--small(src="../assets/images/logo.png")
 
 block scripts
-  // include ../assets/analytics/analytics.html
+  //- include ../assets/analytics/analytics.html
