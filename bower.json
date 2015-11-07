@@ -2,7 +2,9 @@
   "name": "juja.com.ua",
   "description": "",
   "main": "server.js",
-  "authors": [ "kolbasik" ],
+  "authors": [
+    "kolbasik"
+  ],
   "license": "ISC",
   "homepage": "https://github.com/kolbasik/jujacomua",
   "private": true,
@@ -12,5 +14,8 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "skeleton": "~2.0.4"
+  }
 }
